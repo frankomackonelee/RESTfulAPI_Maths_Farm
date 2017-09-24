@@ -65,7 +65,7 @@ public class Service
 			}
     	}
     	
-    	Response theResonse = ReponseFactory.MakeResponse(fetchers);
+    	Response theResonse = ResponseFactory.MakeResponse(fetchers);
     	Gson myGson = new Gson();
     	String jsonString = myGson.toJson(theResonse);
     	System.out.println(jsonString);
