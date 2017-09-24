@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+#topics{
+  width: 150px;
+}
+#subtopics{
+  width: 350px;
+}
+#levels{
+  width: 170px;
+}
+#titles{
+  width: 710px;
+}
+.labelselector{
+  float: left;
+  margin-right:20px;
+}
+.selector, label {
+    display:block;
+}
