@@ -12,7 +12,7 @@ public class ReponseFactory {
 	static String driverInfo = "org.mariadb.jdbc.Driver";
 	static String url = "jdbc:mariadb://localhost:3306/mathsfarm";
 	static String username = "root";
-	static String password = "Need to update this";
+	static String password = "ThisIsNotThePassword";
 	
 	public static Response MakeResponse(ArrayList<Fetcher> fetchers){
 		
