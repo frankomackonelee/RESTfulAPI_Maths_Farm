@@ -12,7 +12,8 @@ public class ResponseFactory {
 	static String driverInfo = "org.mariadb.jdbc.Driver";
 	static String url = "jdbc:mariadb://localhost:3306/mathsfarm";
 	static String username = "root";
-	static String password = "Password12345";
+	//This is the version to have in the master branch
+	static String password = "NotThePassword";
 	
 	public static Response MakeResponse(ArrayList<Fetcher> fetchers){
 		
