@@ -20,7 +20,7 @@ public class ResponseFactoryTest {
 		FetchTitles titleFetcher = new FetchTitles("topics", testRequest);
 		ArrayList<Fetcher> fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		Response testResponse = ReponseFactory.MakeResponse(fetchers);
+		Response testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 14);	
 		
 		testRequest = new Request();
@@ -28,7 +28,7 @@ public class ResponseFactoryTest {
 		titleFetcher = new FetchTitles("subtopics", testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 6);
 
 		testRequest = new Request();
@@ -36,7 +36,7 @@ public class ResponseFactoryTest {
 		titleFetcher = new FetchTitles("levels", testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 10);
 		
 		assertNull(testResponse.levels);
@@ -46,7 +46,7 @@ public class ResponseFactoryTest {
 		titleFetcher = new FetchTitles("subtopics", testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertNull(testResponse.titles);
 		
 		testRequest = new Request();
@@ -55,7 +55,7 @@ public class ResponseFactoryTest {
 		titleFetcher = new FetchTitles("levels", "topics", testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 1);
 
 		testRequest = new Request();
@@ -64,7 +64,7 @@ public class ResponseFactoryTest {
 		titleFetcher = new FetchTitles("levels", "subtopics", testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 4);
 
 		testRequest = new Request();
@@ -75,7 +75,7 @@ public class ResponseFactoryTest {
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(titleFetcher);
 		fetchers.add(levelFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.titles.size(), 4);
 		assertEquals(testResponse.levels.size(), 5);
 		
@@ -83,7 +83,7 @@ public class ResponseFactoryTest {
 		FetchSubtopics subtopicFetcher = new FetchSubtopics();
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(subtopicFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.subtopics.size(), 29);
 
 		testRequest = new Request();
@@ -91,14 +91,14 @@ public class ResponseFactoryTest {
 		subtopicFetcher = new FetchSubtopics("topics",testRequest);
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(subtopicFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(testResponse.subtopics.size(), 19);
 		
 		testRequest = new Request();
 		levelFetcher = new FetchLevels();
 		fetchers = new ArrayList<Fetcher>();
 		fetchers.add(levelFetcher);
-		testResponse = ReponseFactory.MakeResponse(fetchers);
+		testResponse = ResponseFactory.MakeResponse(fetchers);
 		assertEquals(5, testResponse.levels.size());
 		
 	}
