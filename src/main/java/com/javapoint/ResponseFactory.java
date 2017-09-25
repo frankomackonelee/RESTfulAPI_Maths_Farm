@@ -13,7 +13,7 @@ public class ResponseFactory {
 	static String url = "jdbc:mariadb://localhost:3306/mathsfarm";
 	static String username = "root";
 	//This is the version to have in the master branch
-	static String password = "NotThePassword";
+	static String password = "SurelyNotThePassword";
 	
 	public static Response MakeResponse(ArrayList<Fetcher> fetchers){
 		
