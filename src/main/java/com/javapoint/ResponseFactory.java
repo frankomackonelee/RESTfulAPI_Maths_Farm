@@ -12,7 +12,8 @@ public class ResponseFactory {
 	static String driverInfo = "org.mariadb.jdbc.Driver";
 	static String url = "jdbc:mariadb://localhost:3306/mathsfarm";
 	static String username = "root";
-	static String password = "Password12345";
+	//This is what I want on the working branch, but not to be merged to master
+	static String password = "assword12345";
 	
 	public static Response MakeResponse(ArrayList<Fetcher> fetchers){
 		
