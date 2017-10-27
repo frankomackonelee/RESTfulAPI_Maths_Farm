@@ -1,9 +1,9 @@
 /**
  * 
  */
-function AJAXrequest(myURL, myMessage){
-	//properties
-	this.url = myURL;
+function AJAXrequest(myMessage){
+	//This url will need to updated when deployed on the live system;
+	this.url = "http://localhost:8080/MFQ-1.1-SNAPSHOT/rest/Questions/Info";
 	this.message = myMessage;
 	this.requestType = "POST";
 	this.responseType = "json";

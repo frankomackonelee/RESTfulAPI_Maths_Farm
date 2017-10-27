@@ -1,7 +1,5 @@
 package com.javapoint;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class FetchSubtopics extends Fetcher {
@@ -31,30 +29,13 @@ public class FetchSubtopics extends Fetcher {
 	}
 	
 	@Override
-	public String GetSQL() {
-		return this.query;
+	public String getToFetch(){
+		return toFetch;
 	}
 
 	@Override
-	public void AddReponse(ResultSet rs, Response theResponse) throws SQLException {
-		ArrayList<String> handle  = new ArrayList<String>();
-		
-		if(rs.isBeforeFirst()){
-			while (rs.next()) {
-				handle.add(rs.getString(1));
-			}				
-		}
-		
-		if(handle!=null && handle.size() != 0){
-			System.out.println("Adding " + toFetch + "s the response: " + handle.toString());
-			theResponse.subtopics = new ArrayList<String>(handle);
-		}
-	}
-
-	@Override
-	public ArrayList<PreparedStatementPOJO> getPreparedStatementParameters() {
-		
-		return this.preparedStatementParameters;
+	public void addResponse(Response theResponse, ArrayList<String> theHandle) {
+		theResponse.subtopics = new ArrayList<String>(theHandle);
 	}
 
 }

@@ -31,42 +31,41 @@ function fillElement(idName, selectorArray){
 
 function changeResponse(domSelector){
 	return function(){
-		switch (domSelector.id) {
-		case "topics":
-			var request = {
-					seeking: ["subtopics","titles"],
-					topics: [domSelector.value]
-			}	
-			sendAJAXrequest(request);				
-			break;
-
-		case "subtopics":
-		case "levels":
-			var request = {
-							seeking: ["titles"],
-		};
-			if(document.getElementById("subtopics").value!=emptySelectors){
-				request.subtopics = [document.getElementById("subtopics").value];
-			};
-			if(document.getElementById("levels").value!=emptySelectors){
-				request.levels = levels = [document.getElementById("levels").value];
-			};
-			sendAJAXrequest(request);
-			break;
-			
-		case "titles":
-			alert("I haven't programmed this one");
-			break;
-			
-		default:
-			break;
+			switch (domSelector.id) {
+			case "topics":
+				var request = {
+						seeking: ["subtopics","titles"],
+						topics: [domSelector.value]
+				}	
+				sendAJAXrequest(request);				
+				break;
+	
+			case "subtopics":
+			case "levels":
+				var request = {
+								seeking: ["titles"],
+							};
+				if(document.getElementById("subtopics").value!=emptySelectors){
+					request.subtopics = [document.getElementById("subtopics").value];
+				};
+				if(document.getElementById("levels").value!=emptySelectors){
+					request.levels = levels = [document.getElementById("levels").value];
+				};
+				sendAJAXrequest(request);
+				break;
+				
+			case "titles":
+				alert("I haven't programmed this one");
+				break;
+				
+			default:
+				break;
 		}	
 	}
 }
 
-function sendAJAXrequest(message){
-	var myUrl = "http://localhost:8080/MFQ/rest/Questions/Info";
-	myAJAXRequest = new AJAXrequest(myUrl, JSON.stringify(message));
+function sendAJAXrequest(message, responseFunction){
+	myAJAXRequest = new AJAXrequest(JSON.stringify(message));
 	myAJAXRequest.makeRequest(receiveAJAXresponse);	
 }
 

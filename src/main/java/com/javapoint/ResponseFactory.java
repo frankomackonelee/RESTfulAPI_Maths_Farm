@@ -13,7 +13,7 @@ public class ResponseFactory {
 	static String url = "jdbc:mariadb://localhost:3306/mathsfarm";
 	static String username = "root";
 	//This is the version to have in the master branch
-	static String password = "SurelyNotThePassword";
+	static String password = "Password12345";
 	
 	public static Response MakeResponse(ArrayList<Fetcher> fetchers){
 		
@@ -50,7 +50,7 @@ public class ResponseFactory {
 				}
 				ResultSet rs = pstmt.executeQuery( );
 				
-				theFetcher.AddReponse(rs, theResponse);	
+				theFetcher.fetchReponse(rs, theResponse);	
 				
 				pstmt.close();	
 			}

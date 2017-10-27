@@ -1,7 +1,5 @@
 package com.javapoint;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class FetchTitles extends Fetcher {
@@ -61,29 +59,14 @@ public class FetchTitles extends Fetcher {
 			this.query = "Hasn't been written";			
 		}
 	}
-
-	@Override
-	public String GetSQL() {
-		return this.query;
-	}
-
-	@Override
-	public void AddReponse(ResultSet rs, Response theResponse) throws SQLException {
-		ArrayList<String> handle  = new ArrayList<String>();
-		
-		if(rs.isBeforeFirst()){
-			while (rs.next()) {
-				handle.add(rs.getString(1));
-			}				
-		}
-		
-		if(handle!=null && handle.size() != 0){
-			System.out.println("Adding " + toFetch + "s the response: " + handle.toString());
-			theResponse.titles = new ArrayList<String>(handle);
-		}
-	}
 	
-	public ArrayList<PreparedStatementPOJO> getPreparedStatementParameters(){
-		return preparedStatementParameters;
+	@Override
+	public String getToFetch(){
+		return toFetch;
+	}
+
+	@Override
+	public void addResponse(Response theResponse, ArrayList<String> theHandle) {
+		theResponse.titles = new ArrayList<String>(theHandle);
 	}
 }
